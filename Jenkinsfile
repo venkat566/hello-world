@@ -22,18 +22,5 @@ pipeline {
         dockerpush(appName, version)
       }
     }
-    // stage('Docker Build') {
-    //   agent any
-    //   steps {
-    //     sh '''
-    //     ls -altr
-    //     pwd
-    //     docker build -t helloworld:latest .
-    //     docker login -u admin -p admin 3.89.93.229:8082
-    //     docker tag helloworld:latest 3.89.93.229:8082/helloworld:v2
-    //     docker push 3.89.93.229:8082/helloworld:v2
-    //     '''
-    //   }
-    // }
   }
 }
