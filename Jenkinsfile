@@ -19,7 +19,8 @@ pipeline {
         pwd
         docker build -t helloworld:latest .
         docker login -u admin -p admin http://100.26.22.53:8082
-        docker push helloworld:latest 100.26.22.53:8082/helloworld:latest
+        docker tag helloworld:latest 100.26.22.53:8082/helloworld:latest
+        docker push 100.26.22.53:8082/helloworld:latest
         '''
       }
     }
