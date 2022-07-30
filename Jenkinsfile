@@ -4,7 +4,7 @@ pipeline {
   agent none
   environment {
     def appName='helloworld'
-    def version='1.0'
+    def version='2.0'
   }
   stages {
     stage('build') {
