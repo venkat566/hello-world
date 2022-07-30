@@ -4,8 +4,9 @@ pipeline {
   agent none
   stages {
     stage('Demo') {
-      echo 'Hello world'
-      hello('Alex')
+      steps {
+        hello('Alex')
+      }
     }
     // stage('build') {
     //   agent {
