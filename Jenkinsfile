@@ -19,6 +19,7 @@ pipeline {
       agent any
       steps {
         dockerBuild(appName, version)
+        dockerpush(appName, version)
       }
     }
     // stage('Docker Build') {
