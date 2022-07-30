@@ -20,7 +20,7 @@ pipeline {
         docker build -t helloworld:latest .
         docker login -u admin -p admin 3.89.93.229:8082
         docker tag helloworld:latest 3.89.93.229:8082/helloworld:latest
-        docker push 3.89.93.229:8082/helloworld:latest
+        docker push 3.89.93.229:8082/helloworld:v2
         '''
       }
     }
