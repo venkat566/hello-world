@@ -16,7 +16,8 @@ pipeline {
       steps {
         sh '''
         ls -altr
-        cd hello-world
+        pwd
+        cd target
         docker build -t helloworld:latest .
         '''
       }
