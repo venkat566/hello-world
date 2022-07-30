@@ -18,9 +18,9 @@ pipeline {
         ls -altr
         pwd
         docker build -t helloworld:latest .
-        docker login -u admin -p admin 3.89.93.229:8002
-        docker tag helloworld:latest 3.89.93.229:8002/helloworld:latest
-        docker push 3.89.93.229:8002/helloworld:latest
+        docker login -u admin -p admin 3.89.93.229:8082
+        docker tag helloworld:latest 3.89.93.229:8082/helloworld:latest
+        docker push 3.89.93.229:8082/helloworld:latest
         '''
       }
     }
