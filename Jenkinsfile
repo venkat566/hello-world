@@ -7,8 +7,8 @@ pipeline {
       }
       steps {
         checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/venkat566/hello-world.git']]]
-        sh 'mvn --version'
-        sh 'mvn clean package'
+        sh '''mvn --version
+        mvn clean package'''
       }
     }
   }
