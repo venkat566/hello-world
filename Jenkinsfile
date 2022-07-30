@@ -2,6 +2,10 @@
 
 pipeline {
   agent none
+  environment {
+    def appName='helloworld'
+    def version='1.0'
+  }
   stages {
     stage('build') {
       agent {
@@ -9,6 +13,12 @@ pipeline {
       }
       steps {
         mvnbuild()
+      }
+    }
+    stage('Docker Build') {
+      agent any
+      steps {
+        dockerBuild(appName, version)
       }
     }
     // stage('Docker Build') {
