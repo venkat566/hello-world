@@ -14,7 +14,11 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t helloworld:latest .'
+        sh '''
+        ls -altr
+        cd hello-world
+        docker build -t helloworld:latest .
+        '''
       }
     }
   }
