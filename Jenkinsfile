@@ -2,13 +2,14 @@
 
 pipeline {
   agent none
+  def projectType = 'maven'
   stages {
     stage('build') {
       agent {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        build('maven')
+        build(projectType)
       }
     }
     // stage('Docker Build') {
