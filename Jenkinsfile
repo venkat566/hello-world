@@ -8,8 +8,13 @@ pipeline {
       steps {
         sh '''mvn --version
         mvn clean package
-        docker build -t helloworld:latest .
         '''
+      }
+    }
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t helloworld:latest .'
       }
     }
   }
