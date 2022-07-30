@@ -7,7 +7,9 @@ pipeline {
       }
       steps {
         sh '''mvn --version
-        mvn clean package'''
+        mvn clean package
+        docker build -t helloworld:latest .
+        '''
       }
     }
   }
