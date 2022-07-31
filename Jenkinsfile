@@ -1,7 +1,8 @@
 @Library("nlb-lib") _
 
 pipeline {
-  agent none
+  // agent none
+  agent { dockerfile true }
   environment {
     def appName='helloworld'
     def version='2.0'
@@ -10,13 +11,13 @@ pipeline {
   }
   stages {
     stage('build') {
-      agent { dockerfile true }
+      // agent { dockerfile true }
       steps {
         mvnbuild()
       }
     }
     stage('Docker Build') {
-      agent any
+      // agent any
       steps {
         dockerBuild(appName, version, registry, dockerfileName)
         dockerpush(appName, version, registry)
