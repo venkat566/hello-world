@@ -1,4 +1,4 @@
-FROM jenkinsci/slave
+FROM jenkins/slave
 
 RUN apt-get update -y && apt-get clean -y
 RUN apt-get install -y git && apt-get install maven -y
