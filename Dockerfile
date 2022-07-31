@@ -1,13 +1,7 @@
-FROM ubuntu
-
-USER root
+FROM jenkinsci/slave
 
 RUN apt-get update -y && apt-get clean -y
 RUN apt-get install -y git && apt-get install maven -y
-RUN apt-get install docker.io -y
-RUN apt-get install jenkins-slave
-
-VOLUME /var/run/docker.sock
 
 RUN mvn -version
 
