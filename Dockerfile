@@ -2,6 +2,9 @@ FROM jenkins/ssh-slave
 
 RUN apt-get update && apt-get -y --no-install-recommends install && apt-get clean
 RUN apt-get install -y curl && apt-get install -y git
+RUN apt install docker.io -y
+RUN docker --version
+
 
 ARG MAVEN_VERSION=3.6.2
 ARG USER_HOME_DIR="/usr/jenkins"
@@ -19,3 +22,5 @@ ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 RUN chown -R jenkins:jenkins /home/jenkins &&  chmod -R 777 /home/jenkins
+
+ENTRYPOINT nohup dockerd >/dev/null 2>&1 & sleep 10
