@@ -13,10 +13,10 @@
 # RUN chown -R jenkins:jenkins /home/jenkins &&  chmod -R 777 /home/jenkins
 
 
-FROM ubuntu:18.04
+FROM ubuntu
 MAINTAINER venkat <venkat@gmail.com>
 
-RUN apt-get update && apt-get dist-upgrade -y && rm -rf /var/lib/apt/lists/* && apt-get clean -y
+RUN apt-get update && apt-get clean -y
 RUN apt-get install docker.io -y
 RUN apt-get update && apt-get install -y \
     git \
@@ -24,8 +24,7 @@ RUN apt-get update && apt-get install -y \
     apt-transport-https \
     curl \
     init \
-    openssh-server openssh-client \
- && rm -rf /var/lib/apt/lists/*
+    openssh-server openssh-client
 
 # Install Java
 RUN apt-get update && apt-get install -y openjdk-8-jdk && rm -rf /var/lib/apt/lists/*
