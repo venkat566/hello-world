@@ -4,6 +4,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install && apt-get clea
 RUN apt-get install -y curl && apt-get install -y git && apt-get install maven -y
 
 RUN apt install docker.io -y
+RUN docker run -v /var/run/docker.sock:/var/run/docker.sock
 RUN docker --version
 RUN mvn -version
 
