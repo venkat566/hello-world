@@ -1,4 +1,4 @@
-FROM jenkins/ssh-slave
+FROM ubuntu
 
 USER root
 
@@ -9,5 +9,5 @@ RUN apt-get install docker.io -y
 VOLUME /var/run/docker.sock
 
 RUN mvn -version
-
-RUN chown -R jenkins:jenkins /home/jenkins &&  chmod -R 777 /home/jenkins
+#
+# RUN chown -R jenkins:jenkins /home/jenkins &&  chmod -R 777 /home/jenkins
