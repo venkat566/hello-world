@@ -1,7 +1,7 @@
 @Library("nlb-lib") _
 
 pipeline {
-  // agent { dockerfile true }
+  agent none
   environment {
     def appName='helloworld'
     def version='2.0'
