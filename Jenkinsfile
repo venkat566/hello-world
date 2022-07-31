@@ -5,7 +5,7 @@ pipeline {
   environment {
     def appName='helloworld'
     def version='2.0'
-    def registry='44.202.62.76'
+    def registry='44.202.62.76:8082'
   }
   stages {
     stage('build') {
