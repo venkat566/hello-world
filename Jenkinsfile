@@ -6,7 +6,7 @@ pipeline {
   environment {
     def appName='helloworld'
     def version='2.0'
-    def registry='44.202.62.76:8082'
+    def registry='3.82.129.115:8082'
     def dockerfileName='DockerfileApp'
   }
   stages {
