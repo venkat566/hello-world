@@ -1,0 +1,24 @@
+name: CI
+on: 
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+  #This is to allow manual triggering of pipeline
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Run a one-liner script
+        run: echo Hello, World !!
+
+      - name: Run a multi-liner script
+        run: |
+          echo testing1
+          echo testing2
