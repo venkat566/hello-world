@@ -1,0 +1,17 @@
+name: manual input trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'person to greet'
+        default: 'world'
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: send greeting
+      run: echo "Hello ${{ github.event.input.name }}"
